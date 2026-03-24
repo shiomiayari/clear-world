@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Clear World</string>
+    <string name="accessibility_service_label">Clear World — Shorts検知</string>
+</resources>
