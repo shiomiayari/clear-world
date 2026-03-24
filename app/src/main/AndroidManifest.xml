@@ -32,9 +32,9 @@
                 android:resource="@xml/accessibility_service_config" />
         </service>
 
-        <!-- AppWidget -->
+        <!-- AppWidget（Glance） -->
         <receiver
-            android:name=".widget.AquariumWidget"
+            android:name=".widget.AquariumWidgetReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />

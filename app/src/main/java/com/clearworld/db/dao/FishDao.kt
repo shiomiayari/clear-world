@@ -17,6 +17,10 @@ interface FishDao {
     @Query("SELECT * FROM fish WHERE isAlive = 1 ORDER BY createdAt DESC")
     fun observeAliveFish(): Flow<List<Fish>>
 
+    /** 生きている魚の数を返す（ウィジェットの魚カウント用）。 */
+    @Query("SELECT COUNT(*) FROM fish WHERE isAlive = 1")
+    suspend fun getAliveFishCount(): Int
+
     /** 視聴時間が増えたとき、魚をすべて泡にする。 */
     @Query("UPDATE fish SET isAlive = 0 WHERE isAlive = 1")
     suspend fun killAllFish()
