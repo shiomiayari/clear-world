@@ -61,6 +61,10 @@ dependencies {
     implementation(libs.glance.appwidget)
     implementation(libs.glance.material3)
 
+    // UI
+    implementation(libs.recyclerview)
+    implementation(libs.lifecycle.runtime.ktx)
+
     // Testing
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
