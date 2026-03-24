@@ -8,6 +8,7 @@ import com.clearworld.db.ClearWorldDatabase
 import com.clearworld.db.dao.DailyBlockDao
 import com.clearworld.db.dao.ViewingSessionDao
 import com.clearworld.db.entity.ViewingSession
+import com.clearworld.ui.WarningOverlay
 import com.clearworld.util.DateUtil
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -39,6 +40,8 @@ class ShortsAccessibilityService : AccessibilityService() {
 
     /** 連続視聴の合計秒数（20分警告用） */
     private var continuousSeconds: Long = 0L
+
+    private val warningOverlay by lazy { WarningOverlay(this) }
 
     /** 3分バッファタイマー：離脱後3分経過したら計測終了とみなす */
     private val bufferRunnable = Runnable {
@@ -147,7 +150,7 @@ class ShortsAccessibilityService : AccessibilityService() {
     }
 
     private fun showContinuousViewingWarning() {
-        // TODO: オーバーレイポップアップの表示（機能④で実装）
+        warningOverlay.show("連続視聴が20分を超えました。少し休憩しませんか？")
     }
 
     companion object {

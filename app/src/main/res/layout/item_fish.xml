@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="80dp"
+    android:layout_height="80dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_marginEnd="8dp">
+
+    <!-- 魚の色丸（HSVで色を動的にセット） -->
+    <View
+        android:id="@+id/view_fish_color"
+        android:layout_width="48dp"
+        android:layout_height="48dp" />
+
+    <!-- サイズラベル -->
+    <TextView
+        android:id="@+id/tv_fish_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#CCFFFFFF"
+        android:textSize="11sp"
+        android:layout_marginTop="4dp" />
+
+</LinearLayout>
