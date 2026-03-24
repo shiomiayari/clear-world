@@ -1,19 +1,38 @@
 package com.clearworld.widget
 
-import android.appwidget.AppWidgetManager
-import android.appwidget.AppWidgetProvider
 import android.content.Context
+import androidx.glance.GlanceId
+import androidx.glance.appwidget.GlanceAppWidget
+import androidx.glance.appwidget.GlanceAppWidgetReceiver
+import androidx.glance.appwidget.provideContent
+import com.clearworld.db.ClearWorldDatabase
 
 /**
- * 水槽の透明度と魚を表示するホーム画面ウィジェット。
+ * 水槽ウィジェット。
+ * Glanceを使ってホーム画面に透明度・魚の数を表示する。
  */
-class AquariumWidget : AppWidgetProvider() {
+class AquariumWidget : GlanceAppWidget() {
 
-    override fun onUpdate(
-        context: Context,
-        appWidgetManager: AppWidgetManager,
-        appWidgetIds: IntArray
-    ) {
-        // TODO: ウィジェットのUI更新処理を実装
+    override suspend fun provideGlance(context: Context, id: GlanceId) {
+        val db = ClearWorldDatabase.getInstance(context)
+        val state = db.aquariumStateDao().get()
+        val fishCount = db.fishDao().getAliveFishCount()
+
+        val transparency = state?.transparency ?: 60f
+
+        provideContent {
+            AquariumWidgetContent(
+                transparency = transparency,
+                fishCount = fishCount
+            )
+        }
     }
+}
+
+/**
+ * ウィジェットのブロードキャストレシーバー。
+ * OSからの更新イベントを受け取りウィジェットを更新する。
+ */
+class AquariumWidgetReceiver : GlanceAppWidgetReceiver() {
+    override val glanceAppWidget = AquariumWidget()
 }
