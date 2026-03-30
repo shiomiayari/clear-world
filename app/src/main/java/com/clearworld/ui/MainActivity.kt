@@ -1,7 +1,6 @@
 package com.clearworld.ui
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.provider.Settings
 import android.view.accessibility.AccessibilityManager
@@ -12,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.clearworld.R
 import com.clearworld.db.ClearWorldDatabase
-import com.clearworld.widget.waterColorFor
 import com.clearworld.widget.statusLabelFor
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -73,23 +71,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateAquariumUI(transparency: Float) {
-        // 水槽の背景色を更新
-        val waterColor = waterColorFor(transparency)
-        findViewById<android.view.View>(R.id.view_aquarium)
-            .setBackgroundColor(
-                Color.argb(
-                    (waterColor.alpha * 255).toInt(),
-                    (waterColor.red * 255).toInt(),
-                    (waterColor.green * 255).toInt(),
-                    (waterColor.blue * 255).toInt()
-                )
-            )
-
-        // 透明度テキスト
-        findViewById<TextView>(R.id.tv_transparency).text = "${transparency.toInt()}%"
-
-        // 状態ラベル
-        findViewById<TextView>(R.id.tv_status_label).text = statusLabelFor(transparency)
+        val aquariumView = findViewById<AquariumView>(R.id.view_aquarium)
+        aquariumView.setTransparency(transparency)
+        aquariumView.setStatusLabel(statusLabelFor(transparency))
     }
 
     private fun checkAccessibilityService() {

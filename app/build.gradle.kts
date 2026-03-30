@@ -64,6 +64,7 @@ dependencies {
     // UI
     implementation(libs.recyclerview)
     implementation(libs.lifecycle.runtime.ktx)
+    implementation(libs.lottie)
 
     // Testing
     testImplementation(libs.junit)
