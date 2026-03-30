@@ -2,4 +2,13 @@
 <resources>
     <string name="app_name">Clear World</string>
     <string name="accessibility_service_label">Clear World — Shorts検知</string>
+    <string name="title_clear_world">Clear World</string>
+    <string name="content_description_stats">統計</string>
+    <string name="content_description_settings">設定</string>
+    <string name="label_transparency_default">--</string>
+    <string name="label_fish_section">水槽の魚</string>
+    <string name="banner_accessibility_stopped">計測が止まっています — タップして設定へ</string>
+    <string name="warning_title">水槽が濁り始めています</string>
+    <string name="warning_button_close">閉じる</string>
 </resources>
+

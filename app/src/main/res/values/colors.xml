@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="teal_200">#FF80CBC4</color>
-    <color name="teal_700">#FF00695C</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="teal_200">#FF80CBC4</color>
+    <color name="teal_700">#FF00695C</color>
+
+    <!-- App palette -->
+    <color name="bg_light">#F0F5FF</color>
+    <color name="surface_white">#FFFFFFFF</color>
+    <color name="text_primary">#1A1F36</color>
+    <color name="text_secondary">#4B5563</color>
+    <color name="accent_blue">#1565C0</color>
+    <color name="accent_cyan">#00ACC1</color>
+    <color name="warning_red">#EF5350</color>
 </resources>

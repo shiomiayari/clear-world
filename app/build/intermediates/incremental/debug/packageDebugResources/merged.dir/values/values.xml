@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent_blue">#1565C0</color>
+    <color name="accent_cyan">#00ACC1</color>
+    <color name="bg_light">#F0F5FF</color>
+    <color name="black">#FF000000</color>
+    <color name="surface_white">#FFFFFFFF</color>
+    <color name="teal_200">#FF80CBC4</color>
+    <color name="teal_700">#FF00695C</color>
+    <color name="text_primary">#1A1F36</color>
+    <color name="text_secondary">#6B7280</color>
+    <color name="warning_red">#EF5350</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="accessibility_service_label">Clear World — Shorts検知</string>
+    <string name="app_name">Clear World</string>
+    <string name="banner_accessibility_stopped">計測が止まっています — タップして設定へ</string>
+    <string name="content_description_settings">設定</string>
+    <string name="content_description_stats">統計</string>
+    <string name="label_fish_section">水槽の魚</string>
+    <string name="label_transparency_default">--</string>
+    <string name="title_clear_world">Clear World</string>
+    <string name="warning_button_close">閉じる</string>
+    <string name="warning_title">水槽が濁り始めています</string>
+    <style name="Theme.ClearWorld" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/accent_blue</item>
+        <item name="colorPrimaryVariant">@color/accent_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/accent_cyan</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">@color/bg_light</item>
+    </style>
+</resources>
